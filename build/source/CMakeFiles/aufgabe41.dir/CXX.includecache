@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Blueshift/Desktop/Programmiersprachen/programmiersprachen-aufgabenblatt-4/source/aufgabe41.cpp
+iostream
+-
+

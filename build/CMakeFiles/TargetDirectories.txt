@@ -1,0 +1,6 @@
+/Users/Blueshift/Desktop/Programmiersprachen/programmiersprachen-aufgabenblatt-4/build/CMakeFiles/rebuild_cache.dir
+/Users/Blueshift/Desktop/Programmiersprachen/programmiersprachen-aufgabenblatt-4/build/CMakeFiles/edit_cache.dir
+/Users/Blueshift/Desktop/Programmiersprachen/programmiersprachen-aufgabenblatt-4/build/source/CMakeFiles/Test.dir
+/Users/Blueshift/Desktop/Programmiersprachen/programmiersprachen-aufgabenblatt-4/build/source/CMakeFiles/rebuild_cache.dir
+/Users/Blueshift/Desktop/Programmiersprachen/programmiersprachen-aufgabenblatt-4/build/source/CMakeFiles/edit_cache.dir
+/Users/Blueshift/Desktop/Programmiersprachen/programmiersprachen-aufgabenblatt-4/build/source/CMakeFiles/aufgabe41.dir
