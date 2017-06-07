@@ -44,7 +44,8 @@ struct ListConstIterator
 		private:
 			ListNode<T>* m_node = nullptr;
 };
-		
+//---------------------------------------------------------
+//-------------------Aufgabe4.5----------------------------
 template <typename T>
 struct ListIterator
 {
@@ -72,8 +73,8 @@ struct ListIterator
 
 	pointer operator->() const
 	{
-	return &(m_node->m_value);
-		}
+		return &(m_node->m_value);
+	}
 
 	Self& operator++()
 	{
@@ -114,6 +115,9 @@ struct ListIterator
 			//The Node the iterator is pointing to
 		ListNode<T>* m_node = nullptr;
 };
+//---------------------------------------------------------
+//---------------------------------------------------------
+
 
 template <typename T>
 class List
@@ -138,7 +142,7 @@ public:
 	m_first(nullptr),
 	m_last(nullptr) {}
 //---------------------------------------------------------
-	//Copy-Konstruktor
+//-------------------Aufgabe 4.8 Copy-Konstruktor----------
 
 	List<T>(List<T> const& copylist): 
 	m_size(0), 
@@ -150,7 +154,9 @@ public:
 			push_back(*x);
 		}
 	}
+
 //---------------------------------------------------------
+//-------------------Aufgabe4.2----------------------------
 
 	//Leere Liste?
 	bool empty() const
@@ -165,6 +171,7 @@ public:
 		return(m_size);
 	}
 //---------------------------------------------------------
+//-------------------Aufgabe 4.3---Setter------------------
 
 	void push_front(T const& v)
 	{
@@ -252,9 +259,8 @@ public:
 
 
 	}
-//---------------------------------------------------------
-//--------------Warum so in der Form?----------------------
-//---------------------------------------------------------
+//-------------------Getter--------------------------------
+
 	
 	T const& front() const
   	{
@@ -279,6 +285,7 @@ public:
     	return m_last->m_value;
 	}
 //---------------------------------------------------------
+//-------------------Aufgabe4.4----------------------------
 
 
 	void clear()
@@ -289,6 +296,7 @@ public:
     	}
 	}
 //---------------------------------------------------------
+//-------------------Aufgabe4.6----------------------------
 
 	iterator end() const
   	{
@@ -299,6 +307,23 @@ public:
   	{
     	return iterator {m_first}; 
 	}
+//---------------------------------------------------------
+//----------------Aufgabe4.10------------------------------
+
+	void reverse()
+	{
+		for (auto n=m_last; n!=nullptr; n=n->m_next)
+		{
+			std::swap(n->m_prev, n->m_next);
+		}
+		std::swap(m_first, m_last);
+  	}
+
+
+
+
+
+//---------------------------------------------------------
 
 private:
 	std::size_t m_size = 0;
@@ -306,8 +331,9 @@ private:
 	ListNode<T>* m_last = nullptr;
 
 };
-//---------------------------------------------------------
 
+//---------------------------------------------------------
+//------------------Aufgabe4.7-----------------------------
 template <typename T>
 bool operator == (List<T> const& xs, List<T> const& ys)
 {
@@ -340,7 +366,7 @@ bool operator!=(List<T> const& xs, List<T> const& ys)
 {
   return !(xs == ys);
 }
-
+//---------------------------------------------------------
 
 
 #endif

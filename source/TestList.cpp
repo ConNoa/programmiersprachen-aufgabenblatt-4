@@ -66,26 +66,59 @@ TEST_CASE ( "4.7 TestCases "  )
 	tl1 . push_front (23);
 	tl1 . push_front (34);
 	tl1 . push_front (45);
-
-
-	List < int > tl2 { tl1 };
-
+	List < int > tl2;
+	tl2 . push_front (12);
+	tl2 . push_front (23);
+	tl2 . push_front (34);
+	tl2 . push_front (45);
 	REQUIRE ( tl1 == tl2 );
 	tl2.pop_front();
-	REQUIRE(tl2.front()==34);
+	REQUIRE ( tl1 != tl2 );
 }
 
-TEST_CASE("copy constructor", "[constructor]") 
+TEST_CASE("copy constructor") 
 {
 	List<int> list;
 	list.push_front(1);
 	list.push_front(2);
 	list.push_front(3);
 	list.push_front(4);
-
 	List<int> list2{list};
-	
 	REQUIRE(list == list2);
+}
+
+TEST_CASE ( "reverse" )
+{
+	
+	List < int > tl1 ;
+	tl1 . push_front (12);
+	tl1 . push_front (23);
+	tl1 . push_front (34);
+	tl1 . push_front (45);
+	List < int > tl2;
+	tl2 . push_back (12);
+	tl2 . push_back (23);
+	tl2 . push_back (34);
+	tl2 . push_back (45);
+	tl2.reverse();
+	REQUIRE (tl1==tl2);
+
+
+	List < int > tl3 ;
+	tl3 . push_front (12);
+	tl3 . push_front (23);
+	tl3 . push_front (34);
+	tl3 . push_front (45);
+	List < int > tl4;
+	tl4 . push_front (45);
+	tl4 . push_front (34);
+	tl4 . push_front (23);
+	tl4 . push_front (12);
+	tl4.reverse();
+	REQUIRE (tl3==tl4);
+
+
+
 }
 int main(int argc, char* argv[])
 {
