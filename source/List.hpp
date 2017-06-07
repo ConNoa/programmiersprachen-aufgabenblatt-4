@@ -301,9 +301,9 @@ bool operator == (List<T> const& xs, List<T> const& ys)
 	auto x_iter = xs.begin();
 	auto y_iter = ys.begin();
 
-	if(xs.size == ys.size)
+	if(xs.size() == ys.size())
 	{
-		for(int i : ys.size)
+		for(int i : ys)
 		{
 			if(*x_iter != *y_iter)
 			{

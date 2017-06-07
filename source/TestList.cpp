@@ -57,6 +57,23 @@ TEST_CASE("provide acces to the first element with begin", "[iterators]")
 	REQUIRE(42 == *list.begin());
 }
 
+
+TEST_CASE ( "Aufgabe4.7 "  )
+{
+
+	List < int > l1 ;
+	l1 . push_front (12);
+	l1 . push_front (23);
+	l1 . push_front (34);
+	l1 . push_front (45);
+
+
+	List < int > l2 { l1 };
+
+	REQUIRE ( l1 == l2 );
+	l2.pop_front();
+	REQUIRE(l2.front()==34);
+}
 int main(int argc, char* argv[])
 {
   return Catch::Session().run(argc, argv);
