@@ -138,6 +138,19 @@ public:
 	m_first(nullptr),
 	m_last(nullptr) {}
 //---------------------------------------------------------
+	//Copy-Konstruktor
+
+	List<T>(List<T> const& copylist): 
+	m_size(0), 
+	m_first(nullptr), 
+	m_last(nullptr) 
+	{
+		for (auto x=copylist.begin(); x!=copylist.end(); x++)
+		{
+			push_back(*x);
+		}
+	}
+//---------------------------------------------------------
 
 	//Leere Liste?
 	bool empty() const

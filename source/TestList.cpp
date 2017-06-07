@@ -32,47 +32,60 @@ TEST_CASE("Aufgabe 4.3 [push front push back pop front]")
 
 TEST_CASE("should be empty after clearing", "[modifiers]")
 {
-	List<int> list; 
-	list.push_front(1); 
-	list.push_front(2); 
-	list.push_front(3); 
-	list.push_front(4); 
-	list.clear(); 
-	REQUIRE(list.empty());
+	List<int> tl; 
+	tl.push_front(1); 
+	tl.push_front(2); 
+	tl.push_front(3); 
+	tl.push_front(4); 
+	tl.clear(); 
+	REQUIRE(tl.empty());
 }
 
 TEST_CASE("should be an empty range after default construction","[iterators]") 
 {
-	List<int> list;
-	auto b = list.begin(); 
-	auto e = list.end(); 
+	List<int> tl;
+	auto b = tl.begin(); 
+	auto e = tl.end(); 
 	REQUIRE(b == e);
 }
 
 
 TEST_CASE("provide acces to the first element with begin", "[iterators]")
 {
-	List<int> list; 
-	list.push_front(42); 
-	REQUIRE(42 == *list.begin());
+	List<int> tl; 
+	tl.push_front(42); 
+	REQUIRE(42 == *tl.begin());
 }
 
 
-TEST_CASE ( "Aufgabe4.7 "  )
+TEST_CASE ( "4.7 TestCases "  )
 {
 
-	List < int > l1 ;
-	l1 . push_front (12);
-	l1 . push_front (23);
-	l1 . push_front (34);
-	l1 . push_front (45);
+	List < int > tl1 ;
+	tl1 . push_front (12);
+	tl1 . push_front (23);
+	tl1 . push_front (34);
+	tl1 . push_front (45);
 
 
-	List < int > l2 { l1 };
+	List < int > tl2 { tl1 };
 
-	REQUIRE ( l1 == l2 );
-	l2.pop_front();
-	REQUIRE(l2.front()==34);
+	REQUIRE ( tl1 == tl2 );
+	tl2.pop_front();
+	REQUIRE(tl2.front()==34);
+}
+
+TEST_CASE("copy constructor", "[constructor]") 
+{
+	List<int> list;
+	list.push_front(1);
+	list.push_front(2);
+	list.push_front(3);
+	list.push_front(4);
+
+	List<int> list2{list};
+	
+	REQUIRE(list == list2);
 }
 int main(int argc, char* argv[])
 {
