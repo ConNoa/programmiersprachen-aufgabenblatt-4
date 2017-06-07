@@ -275,6 +275,17 @@ public:
       		pop_back();
     	}
 	}
+//---------------------------------------------------------
+
+	iterator end() const
+  	{
+    	return iterator {};
+  	}
+
+  	iterator begin() const
+  	{
+    	return iterator {m_first}; 
+	}
 
 private:
 	std::size_t m_size = 0;
@@ -282,5 +293,41 @@ private:
 	ListNode<T>* m_last = nullptr;
 
 };
+//---------------------------------------------------------
+
+template <typename T>
+bool operator == (List<T> const& xs, List<T> const& ys)
+{
+	auto x_iter = xs.begin();
+	auto y_iter = ys.begin();
+
+	if(xs.size == ys.size)
+	{
+		for(int i : ys.size)
+		{
+			if(*x_iter != *y_iter)
+			{
+				return false;
+			}
+			++x_iter;
+			++y_iter;
+
+		}
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}
+
+template<typename T>
+
+bool operator!=(List<T> const& xs, List<T> const& ys)
+{
+  return !(xs == ys);
+}
+
+
 
 #endif
